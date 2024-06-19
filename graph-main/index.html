@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Calles</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestión de calles</h1>
+        </header>
+        <div class="input-section">
+            <div class="input-container">
+                <h2>Agregar calle</h2>
+                <input type="text" id="vertices" placeholder="Ingresa el numero de calles (separados por comas)">
+                <button onclick="addVertices()">Agregar calles</button>
+            </div>
+            <div class="input-container">
+                <h2>Agregar la distancia</h2>
+                <input type="text" id="start" placeholder="Calle de inicio">
+                <input type="text" id="end" placeholder="Calle de fin">
+                <input type="number" id="weight" placeholder="Distancia" value="1">
+                <button onclick="addEdge()">Agregar distancia</button>
+            </div>
+            <div class="input-container">
+                <h2>Recorrido DFS</h2>
+                <button id="executeDFS" onclick="executeDFS()">Ejecutar DFS</button>
+            </div>
+            <div class="input-container">
+                <h2>Recorrido Dijkstra</h2>
+                <input type="text" id="dijkstraInicio" placeholder="Vértice de inicio">
+                <button id="dijkstraBtn" onclick="executeDijkstra()">Buscar</button>
+            </div>
+        </div>
+        <div id="output" class="output"></div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+    <script type="module" src="./src/controllers/app.js"></script>
+</body>
+</html>
